@@ -1,5 +1,6 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cinzel+Decorative&family=Exo+2&family=Pacifico&family=Quicksand:wght@300..700&display=swap');
+/* Added Lilita One and Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cinzel+Decorative&family=Exo+2&family=Lilita+One&family=Nunito:wght@400;700&family=Pacifico&family=Quicksand:wght@300..700&display=swap');
 
 /* General Body Styling */
 body {
@@ -16,6 +17,7 @@ body {
     background-size: cover;
     background-position: center;
     transition: background-color 0.5s ease; /* Smooth background color transition */
+    padding-top: 80px; /* Add padding to body to prevent content hiding behind fixed nav */
 }
 
 /* Navigation Bar */
@@ -70,8 +72,8 @@ body.hall-of-fame {
     background: linear-gradient(45deg, #ff99e6, #ccffcc, #ffff99, #a0c8f0); /* Bright, funky gradient */
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
-    font-family: 'Pacifico', cursive;
-    color: #333; /* Darker text for bright background */
+    font-family: 'Nunito', sans-serif; /* Changed main text font */
+    color: #000; /* Changed default text color to black for readability */
 }
 
 @keyframes gradientAnimation {
@@ -80,9 +82,16 @@ body.hall-of-fame {
     100% { background-position: 0% 50%; }
 }
 
-body.hall-of-fame h1, body.hall-of-fame h2, body.hall-of-fame h3 {
-     font-family: 'Bungee Shade', cursive;
-     text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+/* Updated Hall of Fame Headings */
+body.hall-of-fame h1,
+body.hall-of-fame h2,
+body.hall-of-fame h3 {
+     font-family: 'Lilita One', cursive; /* Changed heading font */
+     color: #000; /* Changed heading color to black */
+     /* Added text shadow for outline effect */
+     text-shadow: 2px 2px #fff, -2px 2px #fff, 2px -2px #fff, -2px -2px #fff,
+                  2px 0 #fff, 0 2px #fff, -2px 0 #fff, 0 -2px #fff;
+     margin-bottom: 20px;
 }
 
 
@@ -101,7 +110,7 @@ body.support h1 {
 /* Content Container */
 .container {
     max-width: 960px;
-    margin: 80px auto 20px auto; /* Adjust margin to account for fixed nav */
+    margin: 20px auto; /* Adjusted margin */
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     border-radius: 10px;
@@ -109,14 +118,15 @@ body.support h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.get-coin .container, .support .container {
-     background-color: rgba(255, 255, 255, 0.8); /* Lighter container for lighter backgrounds */
+.get-coin .container, .support .container, .hall-of-fame .container {
+     background-color: rgba(255, 255, 255, 0.9); /* Lighter container for lighter/bright backgrounds */
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+     color: #333; /* Darker text inside lighter containers */
 }
 
 
 h1, h2, h3 {
-    color: #ffd700; /* Default heading color (Gold) */
+    color: #ffd700; /* Default heading color (Gold) - overridden by page-specific styles */
     margin-bottom: 20px;
 }
 
@@ -156,6 +166,11 @@ h1, h2, h3 {
     background-color: rgba(255, 215, 0, 0.2); /* Light gold background */
 }
 
+/* Testimonial text color within lighter containers */
+.get-coin .testimonial, .support .testimonial, .hall-of-fame .testimonial {
+    color: #333; /* Darker text within testimonials on lighter backgrounds */
+}
+
 .testimonial p {
     margin: 0;
     font-size: 1.1em;
@@ -166,11 +181,11 @@ h1, h2, h3 {
     margin-top: 10px;
     font-size: 0.9em;
     font-weight: bold;
-    color: #fff; /* White cite color */
+    color: #fff; /* White cite color - overridden in lighter containers */
 }
 
-.get-coin .testimonial cite, .support .testimonial cite {
-    color: #000; /* Black cite color for lighter backgrounds */
+.get-coin .testimonial cite, .support .testimonial cite, .hall-of-fame .testimonial cite {
+    color: #000; /* Black cite color for lighter/bright backgrounds */
 }
 
 
@@ -181,13 +196,14 @@ h1, h2, h3 {
     background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    color: #333; /* Dark text for readability */
+    color: #333; /* Dark text for readability inside the section */
     text-align: left;
 }
 
 .hall-of-fame-section h2 {
     text-align: center;
     margin-top: 0;
+    /* Heading specific styles are handled above with body.hall-of-fame h2 */
 }
 
 .dictator-intro {
@@ -214,6 +230,7 @@ h1, h2, h3 {
     font-style: italic;
     border-left: 3px solid #ffd700;
     padding-left: 15px;
+    color: #333; /* Ensure testimony text is dark */
 }
 
 .dick-world-section {
@@ -225,6 +242,7 @@ h1, h2, h3 {
 .dick-world-section h3 {
     text-align: center;
     margin-bottom: 20px;
+     /* Heading specific styles are handled above with body.hall-of-fame h3 */
 }
 
 .dick-world-entries {
@@ -240,6 +258,7 @@ h1, h2, h3 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
+    color: #333; /* Ensure entry text is dark */
 }
 
 .dick-entry:hover {
@@ -254,21 +273,22 @@ h1, h2, h3 {
 }
 
 .dick-entry .name {
-    font-weight: bold;
+    font-weight: 700; /* Use bolder Nunito weight */
     margin-bottom: 5px;
+    color: #000; /* Make name black */
 }
 
 .dick-entry .dialogue {
     font-size: 0.9em;
     font-style: italic;
-    color: #555;
+    color: #555; /* Keep dialogue slightly lighter grey */
 }
 
 .hall-of-fame .update-note {
     margin-top: 40px;
     font-size: 1.2em;
     font-weight: bold;
-    color: #000; /* Black text for the note */
+    color: #000; /* Keep note color black for readability */
     text-align: center;
     animation: pulse 2s infinite; /* Pulsing effect */
 }
@@ -311,8 +331,12 @@ h1, h2, h3 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Adjust padding for smaller screens */
+    }
+
     .container {
-        margin-top: 100px; /* Adjust margin for smaller screens */
+        margin-top: 15px; /* Adjust margin for smaller screens */
         padding: 15px;
     }
 
@@ -345,5 +369,13 @@ h1, h2, h3 {
 
     .meme-gallery {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller meme grid */
+    }
+
+     /* Adjust Hall of Fame heading shadow for smaller screens if needed */
+    body.hall-of-fame h1,
+    body.hall-of-fame h2,
+    body.hall-of-fame h3 {
+        text-shadow: 1.5px 1.5px #fff, -1.5px 1.5px #fff, 1.5px -1.5px #fff, -1.5px -1.5px #fff,
+                     1.5px 0 #fff, 0 1.5px #fff, -1.5px 0 #fff, 0 -1.5px #fff;
     }
 }
