@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #fef08a, #1e1e1e);
+  background: linear-gradient(to bottom, #facc15, #1f2937);
   color: #111;
   text-align: center;
 }
@@ -9,13 +9,33 @@ body {
 header {
   background: #ffcc00;
   color: #000;
-  padding: 2rem 1rem;
-  box-shadow: 0 0 10px #000;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #222;
+  background: #fef9c3;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background: #facc15;
+  color: #000;
 }
 
 .tagline {
   font-style: italic;
   margin-top: 0.5rem;
+  color: #333;
 }
 
 .main-content {
@@ -25,26 +45,28 @@ header {
 }
 
 .logo {
-  max-width: 300px;
-  margin-bottom: 1rem;
+  max-width: 250px;
+  margin: 1rem 0;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.meme-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-ul li {
-  padding: 0.5rem 0;
-  font-weight: bold;
+.meme-gallery img {
+  max-width: 200px;
+  border: 3px solid #333;
+  border-radius: 12px;
 }
 
 footer {
-  background: #1e1e1e;
-  color: #fff;
+  background: #1f2937;
+  color: #facc15;
   padding: 1rem;
   font-size: 0.9rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  margin-top: 2rem;
 }
